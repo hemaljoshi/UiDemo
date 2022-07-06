@@ -244,9 +244,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   appbarTitle: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 24,
-    fontWeight: '700',
     color: '#1A0217',
   },
   storyViewParent: {
@@ -308,9 +307,8 @@ const styles = StyleSheet.create({
   addStoryImg: {height: 35, width: 35},
   storyImg: {height: 56, width: 56, borderRadius: 50},
   storyText: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 13,
-    fontWeight: '700',
     color: '#1A0217',
   },
   postViewParent: {
@@ -354,8 +352,7 @@ const styles = StyleSheet.create({
   },
   postTitleText: {
     flex: 1,
-    fontFamily: 'Poppins',
-    fontWeight: '700',
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 20,
     color: '#000',
   },

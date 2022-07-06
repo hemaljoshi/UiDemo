@@ -28,6 +28,7 @@
 		67EA330628758E7C000B57DD /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67EA32E828758E7C000B57DD /* SimpleLineIcons.ttf */; };
 		67EA330828758E7C000B57DD /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67EA32E928758E7C000B57DD /* FontAwesome5_Brands.ttf */; };
 		67EA330A28758E7C000B57DD /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67EA32EA28758E7C000B57DD /* MaterialIcons.ttf */; };
+		67EA33112875958A000B57DD /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67EA33102875958A000B57DD /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		67EA32E828758E7C000B57DD /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		67EA32E928758E7C000B57DD /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		67EA32EA28758E7C000B57DD /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		67EA33102875958A000B57DD /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		71E36E5608D798D6D2BF24D5 /* Pods-UiDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UiDemo.debug.xcconfig"; path = "Target Support Files/Pods-UiDemo/Pods-UiDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UiDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB5D79482A3212A465E6A686 /* Pods-UiDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UiDemo.release.xcconfig"; path = "Target Support Files/Pods-UiDemo/Pods-UiDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				67EA33102875958A000B57DD /* Poppins-SemiBold.ttf */,
 				13B07FAE1A68108700A75B9A /* UiDemo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* UiDemoTests */,
@@ -237,6 +240,7 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				9201E8E6BDDEEEFC052C87D2 /* [CP] Embed Pods Frameworks */,
 				C99F64F5BD623CB6654927B4 /* [CP] Copy Pods Resources */,
+				67EA330D2875918D000B57DD /* Resources */,
 			);
 			buildRules = (
 			);
@@ -304,6 +308,14 @@
 				67EA32F428758E7C000B57DD /* Entypo.ttf in Resources */,
 				67EA330228758E7C000B57DD /* Octicons.ttf in Resources */,
 				67EA32F028758E7C000B57DD /* Ionicons.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67EA330D2875918D000B57DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67EA33112875958A000B57DD /* Poppins-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
