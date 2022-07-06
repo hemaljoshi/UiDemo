@@ -8,6 +8,7 @@ import {
   Dimensions,
   ScrollView,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import React from 'react';
 import Container from './src/UIComponents/Container';
@@ -20,212 +21,212 @@ const {height, width} = Dimensions.get('window');
 
 const App = () => {
   return (
-    // <SafeAreaView>
-    <Container style={styles.containerStyle}>
-      <View style={styles.appBarContainer}>
-        <View style={styles.appBarContent}>
-          <View style={styles.appBarItem}>
-            <Icon
-              name="align-left"
-              size={23}
-              color="#000"
-              style={{transform: [{scaleY: -1}]}}
-            />
+    <SafeAreaView style={{flex: 1}}>
+      <Container style={styles.containerStyle}>
+        <View style={styles.appBarContainer}>
+          <View style={styles.appBarContent}>
+            <View style={styles.appBarItem}>
+              <Icon
+                name="align-left"
+                size={23}
+                color="#000"
+                style={{transform: [{scaleY: -1}]}}
+              />
+            </View>
+            <View style={styles.appBarItem}>
+              <Text style={styles.appbarTitle}>My Feed</Text>
+            </View>
           </View>
           <View style={styles.appBarItem}>
-            <Text style={styles.appbarTitle}>My Feed</Text>
+            <Icon name="bell-o" size={23} color="#000" />
           </View>
         </View>
-        <View style={styles.appBarItem}>
-          <Icon name="bell-o" size={23} color="#000" />
+        <View style={styles.storyViewParent}>
+          <ScrollView horizontal={true} style={styles.storyScrollView}>
+            <View style={styles.storyContainer}>
+              <View style={styles.addStory}>
+                <Image
+                  source={require('./assets/img/camera.png')}
+                  style={styles.addStoryImg}
+                />
+              </View>
+              <Text style={styles.storyText}>+ Add</Text>
+            </View>
+            <View style={styles.storyContainer}>
+              <View style={[styles.story, styles.storyActive]}>
+                <Image
+                  source={require('./assets/img/profile-1.jpeg')}
+                  style={styles.storyImg}
+                />
+              </View>
+              <Text style={styles.storyText}>Rhina D</Text>
+            </View>
+            <View style={styles.storyContainer}>
+              <View style={[styles.story, styles.storyActive]}>
+                <Image
+                  source={require('./assets/img/profile-2.jpeg')}
+                  style={styles.storyImg}
+                />
+              </View>
+              <Text style={styles.storyText}>Saima</Text>
+            </View>
+            <View style={styles.storyContainer}>
+              <View style={styles.story}>
+                <Image
+                  source={require('./assets/img/profile-3.jpeg')}
+                  style={styles.storyImg}
+                />
+              </View>
+              <Text style={[styles.storyText, styles.visitedStoryText]}>
+                Rusian Zz
+              </Text>
+            </View>
+            <View style={styles.storyContainer}>
+              <View style={styles.story}>
+                <Image
+                  source={require('./assets/img/profile-4.jpeg')}
+                  style={styles.storyImg}
+                />
+              </View>
+              <Text style={[styles.storyText, styles.visitedStoryText]}>
+                Designer b
+              </Text>
+            </View>
+            <View style={styles.storyContainer}>
+              <View style={styles.story}>
+                <Image
+                  source={require('./assets/img/profile-4.jpeg')}
+                  style={styles.storyImg}
+                />
+              </View>
+              <Text style={[styles.storyText, styles.visitedStoryText]}>
+                Designer b
+              </Text>
+            </View>
+          </ScrollView>
         </View>
-      </View>
-      <View style={styles.storyViewParent}>
-        <ScrollView horizontal={true} style={styles.storyScrollView}>
-          <View style={styles.storyContainer}>
-            <View style={styles.addStory}>
-              <Image
-                source={require('./assets/img/camera.png')}
-                style={styles.addStoryImg}
-              />
+        <View style={styles.postViewParent}>
+          <ScrollView
+            style={styles.postScrollView}
+            contentContainerStyle={styles.postScrollViewContainer}>
+            <View>
+              <View style={styles.postContainer}>
+                <Image
+                  source={require('./assets/img/Neon_TrainStation.jpeg')}
+                  style={styles.postImg}
+                />
+              </View>
+              <View style={{marginHorizontal: 20}}>
+                <View style={styles.postAction}>
+                  <Text style={styles.postTitleText}>Neon Trainstation</Text>
+                  <Icon
+                    name="heart-o"
+                    size={23}
+                    color="#bcbcbc"
+                    style={{marginRight: 5, fontWeight: '700'}}
+                  />
+                  <Text style={[styles.postActionText, {marginRight: 5}]}>
+                    192
+                  </Text>
+                  <IIcon
+                    name="chatbubble-outline"
+                    size={23}
+                    color="#bcbcbc"
+                    style={{marginRight: 5}}
+                  />
+                  <Text style={[styles.postActionText]}>12</Text>
+                </View>
+                <Text style={styles.postActionComment}>NXTLevel Design</Text>
+                <View style={styles.postActionImages}>
+                  <View style={styles.postCommentView}>
+                    <Image
+                      source={require('./assets/img/profile-3.jpeg')}
+                      style={[styles.postCommentImg]}
+                    />
+                  </View>
+                  <View style={styles.postCommentView}>
+                    <Image
+                      source={require('./assets/img/profile-1.jpeg')}
+                      style={[
+                        styles.postCommentImg,
+                        {position: 'absolute', right: 7},
+                      ]}
+                    />
+                  </View>
+                </View>
+              </View>
             </View>
-            <Text style={styles.storyText}>+ Add</Text>
-          </View>
-          <View style={styles.storyContainer}>
-            <View style={[styles.story, styles.storyActive]}>
-              <Image
-                source={require('./assets/img/profile-1.jpeg')}
-                style={styles.storyImg}
-              />
+            <View>
+              <View style={styles.postContainer}>
+                <Image
+                  source={require('./assets/img/influencer.jpeg')}
+                  style={styles.postImg}
+                />
+              </View>
+              <View style={{marginHorizontal: 20}}>
+                <View style={styles.postAction}>
+                  <Text style={styles.postTitleText}>Fashion Model</Text>
+                  <Icon
+                    name="heart-o"
+                    size={23}
+                    color="#bcbcbc"
+                    style={{marginRight: 5, fontWeight: '700'}}
+                  />
+                  <Text style={[styles.postActionText, {marginRight: 5}]}>
+                    192
+                  </Text>
+                  <IIcon
+                    name="chatbubble-outline"
+                    size={23}
+                    color="#bcbcbc"
+                    style={{marginRight: 5}}
+                  />
+                  <Text style={[styles.postActionText]}>12</Text>
+                </View>
+                <Text style={styles.postActionComment}>NXTLevel Design</Text>
+                <View style={styles.postActionImages}>
+                  <View style={styles.postCommentView}>
+                    <Image
+                      source={require('./assets/img/profile-3.jpeg')}
+                      style={[styles.postCommentImg]}
+                    />
+                  </View>
+                  <View style={styles.postCommentView}>
+                    <Image
+                      source={require('./assets/img/profile-1.jpeg')}
+                      style={[
+                        styles.postCommentImg,
+                        {position: 'absolute', right: 7},
+                      ]}
+                    />
+                  </View>
+                </View>
+              </View>
             </View>
-            <Text style={styles.storyText}>Rhina D</Text>
+          </ScrollView>
+        </View>
+        <View style={styles.tabBarParent}>
+          <View style={styles.tabBarChild}>
+            <Foundation name={'home'} color={'#000'} size={33} />
+            <MaterialIcon name={'magnify'} color={'#000'} size={33} />
           </View>
-          <View style={styles.storyContainer}>
-            <View style={[styles.story, styles.storyActive]}>
-              <Image
-                source={require('./assets/img/profile-2.jpeg')}
-                style={styles.storyImg}
-              />
-            </View>
-            <Text style={styles.storyText}>Saima</Text>
+          <View style={styles.tabBarButtonView}>
+            <TouchableOpacity style={styles.tabBarButton}>
+              <Text style={styles.tabBarBtnText}>+</Text>
+            </TouchableOpacity>
           </View>
-          <View style={styles.storyContainer}>
-            <View style={styles.story}>
+          <View style={styles.tabBarChild}>
+            <MaterialIcon name={'heart-outline'} color={'#000'} size={33} />
+            <View style={styles.tabBarProfileView}>
               <Image
                 source={require('./assets/img/profile-3.jpeg')}
-                style={styles.storyImg}
+                style={styles.tabBarImg}
               />
             </View>
-            <Text style={[styles.storyText, styles.visitedStoryText]}>
-              Rusian Zz
-            </Text>
-          </View>
-          <View style={styles.storyContainer}>
-            <View style={styles.story}>
-              <Image
-                source={require('./assets/img/profile-4.jpeg')}
-                style={styles.storyImg}
-              />
-            </View>
-            <Text style={[styles.storyText, styles.visitedStoryText]}>
-              Designer b
-            </Text>
-          </View>
-          <View style={styles.storyContainer}>
-            <View style={styles.story}>
-              <Image
-                source={require('./assets/img/profile-4.jpeg')}
-                style={styles.storyImg}
-              />
-            </View>
-            <Text style={[styles.storyText, styles.visitedStoryText]}>
-              Designer b
-            </Text>
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.postViewParent}>
-        <ScrollView
-          style={styles.postScrollView}
-          contentContainerStyle={styles.postScrollViewContainer}>
-          <View>
-            <View style={styles.postContainer}>
-              <Image
-                source={require('./assets/img/Neon_TrainStation.jpeg')}
-                style={styles.postImg}
-              />
-            </View>
-            <View style={{marginHorizontal: 20}}>
-              <View style={styles.postAction}>
-                <Text style={styles.postTitleText}>Neon Trainstation</Text>
-                <Icon
-                  name="heart-o"
-                  size={23}
-                  color="#bcbcbc"
-                  style={{marginRight: 5, fontWeight: '700'}}
-                />
-                <Text style={[styles.postActionText, {marginRight: 5}]}>
-                  192
-                </Text>
-                <IIcon
-                  name="chatbubble-outline"
-                  size={23}
-                  color="#bcbcbc"
-                  style={{marginRight: 5}}
-                />
-                <Text style={[styles.postActionText]}>12</Text>
-              </View>
-              <Text style={styles.postActionComment}>NXTLevel Design</Text>
-              <View style={styles.postActionImages}>
-                <View style={styles.postCommentView}>
-                  <Image
-                    source={require('./assets/img/profile-3.jpeg')}
-                    style={[styles.postCommentImg]}
-                  />
-                </View>
-                <View style={styles.postCommentView}>
-                  <Image
-                    source={require('./assets/img/profile-1.jpeg')}
-                    style={[
-                      styles.postCommentImg,
-                      {position: 'absolute', right: 7},
-                    ]}
-                  />
-                </View>
-              </View>
-            </View>
-          </View>
-          <View>
-            <View style={styles.postContainer}>
-              <Image
-                source={require('./assets/img/influencer.jpeg')}
-                style={styles.postImg}
-              />
-            </View>
-            <View style={{marginHorizontal: 20}}>
-              <View style={styles.postAction}>
-                <Text style={styles.postTitleText}>Fashion Model</Text>
-                <Icon
-                  name="heart-o"
-                  size={23}
-                  color="#bcbcbc"
-                  style={{marginRight: 5, fontWeight: '700'}}
-                />
-                <Text style={[styles.postActionText, {marginRight: 5}]}>
-                  192
-                </Text>
-                <IIcon
-                  name="chatbubble-outline"
-                  size={23}
-                  color="#bcbcbc"
-                  style={{marginRight: 5}}
-                />
-                <Text style={[styles.postActionText]}>12</Text>
-              </View>
-              <Text style={styles.postActionComment}>NXTLevel Design</Text>
-              <View style={styles.postActionImages}>
-                <View style={styles.postCommentView}>
-                  <Image
-                    source={require('./assets/img/profile-3.jpeg')}
-                    style={[styles.postCommentImg]}
-                  />
-                </View>
-                <View style={styles.postCommentView}>
-                  <Image
-                    source={require('./assets/img/profile-1.jpeg')}
-                    style={[
-                      styles.postCommentImg,
-                      {position: 'absolute', right: 7},
-                    ]}
-                  />
-                </View>
-              </View>
-            </View>
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.tabBarParent}>
-        <View style={styles.tabBarChild}>
-          <Foundation name={'home'} color={'#000'} size={33} />
-          <MaterialIcon name={'magnify'} color={'#000'} size={33} />
-        </View>
-        <View style={styles.tabBarButtonView}>
-          <TouchableOpacity style={styles.tabBarButton}>
-            <Text style={styles.tabBarBtnText}>+</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.tabBarChild}>
-          <MaterialIcon name={'heart-outline'} color={'#000'} size={33} />
-          <View style={styles.tabBarProfileView}>
-            <Image
-              source={require('./assets/img/profile-3.jpeg')}
-              style={styles.tabBarImg}
-            />
           </View>
         </View>
-      </View>
-    </Container>
-    // </SafeAreaView>
+      </Container>
+    </SafeAreaView>
   );
 };
 
