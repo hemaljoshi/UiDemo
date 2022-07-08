@@ -11,18 +11,32 @@ import React from 'react';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
+import {ParamListBase} from '@react-navigation/native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const PostDetails = () => {
+interface Props {
+  navigation: DrawerNavigationProp<ParamListBase>;
+}
+const PostDetails: React.FC<Props> = ({navigation}) => {
+  const openDrawer = () => {
+    navigation.openDrawer();
+  };
+  const goBack = () => {
+    navigation.goBack();
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.appbarView}>
         <View style={styles.appbarTextIcon}>
-          <Ionicon name={'arrow-back'} size={35} color="#fff" />
+          <TouchableOpacity onPress={goBack}>
+            <Ionicon name={'arrow-back'} size={35} color="#fff" />
+          </TouchableOpacity>
           <Text style={styles.appBarTitleText}>Comments</Text>
         </View>
-        <View>
+        <TouchableOpacity onPress={openDrawer}>
           <MaterialIcon name={'dots-vertical'} color="#fff" size={35} />
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.postImgView}>
         <Image

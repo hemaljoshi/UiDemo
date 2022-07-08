@@ -14,32 +14,37 @@ import React from 'react';
 import Container from '../UIComponents/Container';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IIcon from 'react-native-vector-icons/Ionicons';
-import {NavigationProp, ParamListBase} from '@react-navigation/native';
+// import {} from '@react-navigation/native';
+import {DrawerNavigationProp} from '@react-navigation/drawer';
 import Foundation from 'react-native-vector-icons/Foundation';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {ParamListBase} from '@react-navigation/native';
 
 const {height, width} = Dimensions.get('window');
 
 interface Props {
-  navigation: NavigationProp<ParamListBase>;
+  navigation: DrawerNavigationProp<ParamListBase>;
 }
 const Home: React.FC<Props> = ({navigation}) => {
   const onPress = () => {
     navigation.navigate('PostDetails');
+  };
+  const openDrawer = () => {
+    navigation.openDrawer();
   };
   return (
     <SafeAreaView style={{flex: 1}}>
       <Container style={styles.containerStyle}>
         <View style={styles.appBarContainer}>
           <View style={styles.appBarContent}>
-            <View style={styles.appBarItem}>
+            <TouchableOpacity style={styles.appBarItem} onPress={openDrawer}>
               <Icon
                 name="align-left"
                 size={23}
                 color="#000"
                 style={{transform: [{scaleY: -1}]}}
               />
-            </View>
+            </TouchableOpacity>
             <View style={styles.appBarItem}>
               <Text style={styles.appbarTitle}>My Feed</Text>
             </View>
